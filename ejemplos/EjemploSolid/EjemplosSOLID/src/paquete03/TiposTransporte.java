@@ -1,6 +1,5 @@
 
 package paquete03;
-
 /**
  *
  * @author reroes

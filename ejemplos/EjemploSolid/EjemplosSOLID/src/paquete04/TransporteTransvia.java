@@ -1,10 +1,10 @@
-package paquete03;
+package paquete04;
 
 /**
  *
  * @author reroes
  */
-public class TransporteTransvia {
+public class TransporteTransvia extends Transporte {
 
     private String transvia;
     public double tarifa;
@@ -13,6 +13,7 @@ public class TransporteTransvia {
         transvia = n;
     }
 
+    @Override
     public void establecerTarifa() {
         tarifa = 3.00 + 0.60;
     }

@@ -41,7 +41,7 @@ public class TiposTransporte {
     public void establecerPromedioTarifas() {
         promedioTarifas = (obtenerTransporteBus().obtenerTarifa()
                 + obtenerTransporteTaxi().obtenerTarifa()
-                + obtenerTransporteTransvia().obtenerTarifa()) / 2;
+                + obtenerTransporteTransvia().obtenerTarifa()) / 3;
 
     }
 

@@ -42,7 +42,7 @@ public class TarjetaCredito {
     
     @Override
     public String toString(){
-       String cadena = String.format("%s - Cupo Máximo: %s\n", 
+       String cadena = String.format("%s - Cupo Máximo: %.2f\n", 
                nombre,
                cupoM);
        return cadena;

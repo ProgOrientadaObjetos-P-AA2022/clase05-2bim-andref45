@@ -1,23 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete10;
 
+public class APIAmazonMovie implements APIMovie {
 
-public class APIAmazonMovie implements APIMovie{
-    
     private String apiKey;
-    
+
     @Override
-    public void establecerApiKey(String ak){
-        apiKey = ak+"909090";
+    public void establecerApiKey(String ak) {
+        apiKey = String.format("%s%d", ak, 909090);
     }
-    
+
     @Override
-    public String obtenerApiKey(){
+    public String obtenerApiKey() {
         return apiKey;
     }
-    
+
 }

@@ -4,9 +4,15 @@
  */
 package paquete10;
 
-public class Principal {
+import java.util.ArrayList;
+
+public class Principal2 {
 
     public static void main(String[] args) {
+
+        String nombreArchivo = "peliculas.data";
+        
+        ArrayList<GeneradorPeliculas> gP = new ArrayList<>();
 
         APINetflix api = new APINetflix();
         api.establecerApiKey("123455");
@@ -15,6 +21,7 @@ public class Principal {
         gp.establecerLlave(api);
         gp.establecerUrl("http://api.movie?api=");
         System.out.println(gp.obtenerUrl());
+        gP.add(gp);
 
         System.out.println("---------------------------");
 
@@ -25,6 +32,7 @@ public class Principal {
         gp2.establecerLlave(api2);
         gp2.establecerUrl("http://api.movie?api=");
         System.out.println(gp2.obtenerUrl());
+        gP.add(gp2);
 
         System.out.println("---------------------------");
         APIDirectvGo api3 = new APIDirectvGo();
@@ -34,6 +42,7 @@ public class Principal {
         gp3.establecerLlave(api3);
         gp3.establecerUrl("http://api.movie?api=");
         System.out.println(gp3.obtenerUrl());
+        gP.add(gp3);
 
         System.out.println("---------------------------");
 
@@ -44,7 +53,17 @@ public class Principal {
         gp4.establecerLlave(api4);
         gp4.establecerUrl("http://api.movie?api=");
         System.out.println(gp4.obtenerUrl());
+        gP.add(gp4);
 
         System.out.println("---------------------------");
+        
+        
+        EscrituraArchivoSecuencial archivo = new EscrituraArchivoSecuencial
+        (nombreArchivo);
+        for (int i = 0; i < gP.size(); i++) {
+            archivo.establecerRegistroPeliculas(gP.get(i));
+            archivo.establecerSalida();
+        }
+        archivo.cerrarArchivo();
     }
 }
